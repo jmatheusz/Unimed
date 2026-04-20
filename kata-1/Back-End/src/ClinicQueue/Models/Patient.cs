@@ -31,9 +31,13 @@ namespace ClinicQueue.Models
             // Regra 5: Menores de 18 ganham +1 nível (até o teto de CRÍTICA)
             if (Age < 18)
             {
-                if (urgency == UrgencyLevel.BAIXA) urgency = UrgencyLevel.MEDIA;
-                else if (urgency == UrgencyLevel.MEDIA) urgency = UrgencyLevel.ALTA;
-                else if (urgency == UrgencyLevel.ALTA) urgency = UrgencyLevel.CRITICA;
+                urgency = urgency switch
+                {
+                    UrgencyLevel.BAIXA => UrgencyLevel.MEDIA,
+                    UrgencyLevel.MEDIA => UrgencyLevel.ALTA,
+                    UrgencyLevel.ALTA => UrgencyLevel.CRITICA,
+                    _ => urgency
+                };
             }
 
             return urgency;
