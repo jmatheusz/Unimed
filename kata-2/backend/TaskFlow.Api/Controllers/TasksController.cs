@@ -16,9 +16,9 @@ namespace TaskFlow.Api.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get([FromQuery] string? status)
+        public async Task<IActionResult> Get([FromQuery] string? status)
         {
-            var tasks = _taskService.GetAllTasks();
+            var tasks = await _taskService.GetAllTasksAsync();
             if (status == "pending") tasks = tasks.Where(t => !t.Completed).ToList();
             else if (status == "completed") tasks = tasks.Where(t => t.Completed).ToList();
             
@@ -26,25 +26,25 @@ namespace TaskFlow.Api.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] TaskRequest request)
+        public async Task<IActionResult> Post([FromBody] TaskRequest request)
         {
             if (string.IsNullOrEmpty(request.Title)) return BadRequest("Title is required");
-            var task = _taskService.AddTask(request.Title, request.Priority ?? "Média");
+            var task = await _taskService.AddTaskAsync(request.Title, request.Priority ?? "Média");
             return CreatedAtAction(nameof(Get), new { id = task.Id }, task);
         }
 
         [HttpPatch("{id}")]
-        public IActionResult Patch(string id, [FromBody] TaskUpdateRequest request)
+        public async Task<IActionResult> Patch(string id, [FromBody] TaskUpdateRequest request)
         {
-            var task = _taskService.UpdateTask(id, request.Completed, request.Title, request.Priority);
+            var task = await _taskService.UpdateTaskAsync(id, request.Completed, request.Title, request.Priority);
             if (task == null) return NotFound();
             return Ok(task);
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(string id)
+        public async Task<IActionResult> Delete(string id)
         {
-            if (_taskService.DeleteTask(id)) return NoContent();
+            if (await _taskService.DeleteTaskAsync(id)) return NoContent();
             return NotFound();
         }
     }

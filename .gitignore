@@ -34,6 +34,11 @@ yarn-error.log*
 # Database
 *.db
 *.sqlite
+database.json
+
+# Sensitive files
+**/appsettings.json
+**/appsettings.Development.json
 
 # OS
 Thumbs.db

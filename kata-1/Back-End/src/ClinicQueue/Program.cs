@@ -15,7 +15,8 @@ namespace ClinicQueue
             string host = "localhost";
             string database = "hospital";
             string user = "root";
-            string password = "#LeavemeaLone9393";
+            // Lendo a senha de uma variável de ambiente para evitar credenciais hardcoded
+            string password = Environment.GetEnvironmentVariable("DB_PASSWORD") ?? "sua_senha_aqui";
 
             var repo = new PatientRepository(host, database, user, password);
             var service = new QueueService();

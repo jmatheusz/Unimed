@@ -19,8 +19,9 @@ builder.Services.AddCors(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Connection String (Pode ser movido para appsettings.json)
-string connectionString = "Server=localhost;Database=hospital;User ID=root;Password=#LeavemeaLone9393;";
+// Connection String carregada de forma segura via appsettings.json
+string connectionString = builder.Configuration.GetConnectionString("DefaultConnection") 
+    ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
 var app = builder.Build();
 
