@@ -1,0 +1,7 @@
+id_pedido,data_pedido,id_cliente,valor_total,status
+1001,2023-01-10,C001,250.50,Entregue
+1002,15/01/2023,C002,"150,75",Cancelado
+1003,2023-01-20 10:00:00,C003,300.00,Entregue
+1004,2023-01-25,C001,"120,00",Pendente
+1005,,C004,450.00,Entregue
+1006,2023-02-01,C002,,Entregue

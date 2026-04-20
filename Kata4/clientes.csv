@@ -1,0 +1,6 @@
+id_cliente,nome,cidade,estado,data_cadastro
+C001,João Silva,São Paulo,SP,2022-01-01
+C002,Maria Oliveira,sao paulo,SP,2022-02-15
+C003,Carlos Souza,SAO PAULO,SP,2022-03-10
+C004,Ana Santos,Rio de Janeiro,RJ,2022-04-20
+C005,Pedro Costa,rio de janeiro,RJ,2022-05-05

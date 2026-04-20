@@ -1,0 +1,6 @@
+id_pedido,nome_cliente,cidade_normalizada,estado,valor_total,status_pedido,data_pedido,data_prevista_entrega,data_realizada_entrega,atraso_dias,status_entrega
+1001,João Silva,sao paulo,SP,250.5,Entregue,2023-01-10 00:00:00,2023-01-15,2023-01-14,-1.0,Entregue
+1002,Maria Oliveira,sao paulo,SP,150.75,Cancelado,2023-01-15 00:00:00,,,,
+1003,Carlos Souza,sao paulo,SP,300.0,Entregue,2023-01-20 10:00:00,2023-01-25,2023-01-28,3.0,Entregue
+1004,João Silva,sao paulo,SP,120.0,Pendente,2023-01-25 00:00:00,,,,
+1005,Ana Santos,rio de janeiro,RJ,450.0,Entregue,,2023-02-10,2023-02-10,0.0,Entregue
