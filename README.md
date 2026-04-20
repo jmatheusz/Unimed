@@ -50,3 +50,25 @@ cd kata-1/Back-End/src
 cd kata-2/backend/TaskFlow.Api
 
 dotnet run
+
+cd frontend
+
+npm install
+npm start
+
+Kata 4
+
+É necessário ter o Python 3 instalado.
+
+cd kata-4
+
+pip install pandas
+
+python pipeline.py
+
+💬 O que eu faria diferente com mais tempo?
+Implementaria Docker para padronizar o ambiente e facilitar a execução em qualquer máquina
+Criaria mais testes automatizados (tanto no back quanto no Python) para evitar bugs
+Adicionaria documentação da API com Swagger para facilitar o uso
+Implementaria autenticação usando JWT
+No kata 4, em vez de gerar só CSV, integraria com banco de dados e usaria ferramentas como Power BI ou Grafana para visualizar os dados melhor
